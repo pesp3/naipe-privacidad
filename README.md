@@ -9,3 +9,8 @@ Esta página existe **solo** para servir la política de privacidad que Google P
 que es privado. Este repositorio es una copia servida: si el texto cambia, se edita allí y se
 copia aquí, nunca al revés. `Tools/verify-privacidad.sh` comprueba que las dos coinciden byte a
 byte.
+
+La página de soporte (`soporte/`, la *URL de soporte* de App Store Connect) sigue la misma regla:
+el original es `docs/soporte/index.html` del repositorio del juego.
+
+<https://pesp3.github.io/naipe-privacidad/soporte/>
