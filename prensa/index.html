@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prensa — Naipe: Card Logic Puzzle</title>
+<meta name="description" content="Kit de prensa de Naipe, un rompecabezas de lógica con cartas de póker, sin apuestas ni azar. / Press kit for Naipe, a logic puzzle with poker cards. No betting, no luck.">
+<meta property="og:title" content="Naipe: Card Logic Puzzle — Press kit">
+<meta property="og:description" content="You are never dealt a hand. You deal the last card.">
+<meta property="og:image" content="https://naipe.ondasoft.net/prensa/media/portada.jpg">
+<meta property="og:url" content="https://naipe.ondasoft.net/prensa/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="media/icono_256.png">
+<!--
+  Se monta con Tools/montar-prensa.sh y se publica copiando Tools/out/prensa/ a prensa/ en
+  pesp3/naipe-privacidad. Sin servicios de terceros: ni fuentes externas ni analitica.
+  Los enlaces a las tiendas aparecen solos a la hora de salida del iPhone (ver SALIDA abajo).
+-->
+<style>
+  @font-face { font-family: Inter; font-weight: 400; font-display: swap; src: url(media/fuentes/Inter-Regular.ttf); }
+  @font-face { font-family: Inter; font-weight: 600; font-display: swap; src: url(media/fuentes/Inter-SemiBold.ttf); }
+  @font-face { font-family: Merriweather; font-weight: 700; font-display: swap; src: url(media/fuentes/Merriweather-Bold.ttf); }
+  :root {
+    color-scheme: dark;
+    --fondo: #101319;
+    --panel: #1a1f28;
+    --linea: #343b47;
+    --texto: #e8e4da;
+    --suave: #a9a698;
+    --laton: #d2ad74;
+    --crema: #f5eddb;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font: 400 17px/1.65 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--laton); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--laton); outline-offset: 2px; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  .ancho { max-width: 68rem; margin: 0 auto; padding: 0 1rem; }
+  html.js[data-l="es"] .en, html.js[data-l="en"] .es { display: none !important; }
+  html.js.salio .antes, html:not(.salio) .despues { display: none !important; }
+
+  .barra { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; }
+  .marca { font: 700 1.05rem Merriweather, Georgia, serif; color: var(--crema); }
+  .marca span { color: var(--suave); font: 400 0.95rem Inter, sans-serif; margin-left: 0.4rem; }
+  .idioma { display: none; gap: 0.25rem; }
+  html.js .idioma { display: flex; }
+  .idioma button {
+    min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--linea); border-radius: 0.5rem;
+    background: none; color: var(--suave); font: 600 0.85rem Inter, sans-serif; cursor: pointer;
+  }
+  html[data-l="es"] .idioma [data-pon="es"], html[data-l="en"] .idioma [data-pon="en"] {
+    background: var(--panel); color: var(--crema); border-color: var(--laton);
+  }
+
+  .portada { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 0.75rem; }
+  .cabeza { display: flex; gap: 1.25rem; align-items: center; margin: 1.75rem 0 1.5rem; }
+  .cabeza img { width: 6rem; height: 6rem; border-radius: 22%; flex: none; }
+  h1 { font: 700 clamp(1.7rem, 5vw, 2.6rem)/1.2 Merriweather, Georgia, serif; color: var(--crema); margin: 0 0 0.35rem; }
+  .lema { color: var(--laton); font-size: 1.1rem; margin: 0; }
+  h2 { font: 700 1.35rem/1.3 Merriweather, Georgia, serif; color: var(--crema); margin: 3rem 0 0.9rem; }
+  h3 { font: 600 1rem/1.4 Inter, sans-serif; color: var(--crema); margin: 1.5rem 0 0.4rem; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+
+  .aviso { border: 1px solid var(--laton); border-radius: 0.75rem; padding: 1rem 1.15rem; background: var(--panel); }
+  .aviso p { margin: 0; }
+  .aviso strong { color: var(--crema); }
+
+  .dos { display: grid; gap: 0 3rem; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .ficha { margin: 0; padding: 0; }
+  .ficha div { padding: 0.6rem 0; border-bottom: 1px solid var(--linea); }
+  .ficha dt { color: var(--suave); font-size: 0.85rem; }
+  .ficha dd { margin: 0; }
+
+  .medios { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); align-items: start; }
+  .medios video { width: 100%; border-radius: 0.75rem; background: #000; }
+  .capturas { display: grid; gap: 0.75rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .capturas a { display: block; }
+  .capturas img { width: 100%; border-radius: 0.5rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem 0.6rem 0; border-bottom: 1px solid var(--linea); }
+  th { color: var(--suave); font-weight: 600; font-size: 0.85rem; }
+  .boton {
+    display: inline-block; padding: 0.7rem 1.1rem; border-radius: 0.5rem; background: var(--laton);
+    color: #1c1508; font-weight: 600; text-decoration: none; margin: 0 0.5rem 0.5rem 0;
+  }
+  .boton.claro { background: none; border: 1px solid var(--laton); color: var(--laton); }
+  footer { color: var(--suave); font-size: 0.85rem; margin: 3.5rem 0 2.5rem; padding-top: 1rem; border-top: 1px solid var(--linea); }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .dos, .medios { grid-template-columns: minmax(0, 1fr); }
+    .medios video { max-width: 16rem; margin: 0 auto; }
+    .capturas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .portada { aspect-ratio: 2 / 1; }
+    .cabeza img { width: 4.5rem; height: 4.5rem; }
+    th, td { padding-right: 0.5rem; }
+  }
+</style>
+<script>
+  (function () {
+    var h = document.documentElement;
+    var SALIDA = Date.UTC(2026, 10, 9, 16, 0); // 9-nov-2026, 10:00 CST
+    var pedido = new URLSearchParams(location.search).get("lang");
+    var idioma = pedido === "en" || pedido === "es" ? pedido
+               : /^es/i.test(navigator.language || "") ? "es" : "en";
+    h.classList.add("js");
+    if (Date.now() >= SALIDA) h.classList.add("salio");
+    h.setAttribute("data-l", idioma);
+    h.lang = idioma;
+    window.ponIdioma = function (l) { h.setAttribute("data-l", l); h.lang = l; };
+  })();
+</script>
+</head>
+<body>
+<div class="ancho">
+
+<header class="barra">
+  <div class="marca">Naipe<span class="es">Prensa</span><span class="en">Press</span></div>
+  <div class="idioma" role="group" aria-label="Idioma / Language">
+    <button type="button" data-pon="es" onclick="ponIdioma('es')">ES</button>
+    <button type="button" data-pon="en" onclick="ponIdioma('en')">EN</button>
+  </div>
+</header>
+
+<img class="portada" src="media/portada.jpg" width="1920" height="823" alt="Una mesa de cuero con cuatro cartas, una carta boca abajo con un signo de interrogación y tres cartas iluminadas sobre pedestales de bronce.">
+
+<div class="cabeza">
+  <img src="media/icono_256.png" width="256" height="256" alt="">
+  <div>
+    <h1>Naipe: Card Logic Puzzle</h1>
+    <p class="lema es">Aquí nunca te reparten una mano. La última carta la das tú.</p>
+    <p class="lema en">You are never dealt a hand. You deal the last card.</p>
+  </div>
+</div>
+
+<div class="aviso">
+  <div class="antes">
+    <p class="es"><strong>Sale el lunes 9 de noviembre de 2026, a las 10:00 CST (16:00 UTC), en iPhone y Android.</strong> ¿Quieres probarlo antes? Pide un código de iPhone en <a href="mailto:pabloespinoza@gmail.com?subject=Naipe%20-%20c%C3%B3digo%20para%20prensa">pabloespinoza@gmail.com</a>.</p>
+    <p class="en"><strong>Out Monday, November 9, 2026, at 10:00 CST (16:00 UTC), on iPhone and Android.</strong> Want to play it early? Ask for an iPhone code at <a href="mailto:pabloespinoza@gmail.com?subject=Naipe%20-%20press%20code">pabloespinoza@gmail.com</a>.</p>
+  </div>
+  <div class="despues">
+    <p class="es"><strong>Ya disponible.</strong> <a href="https://apps.apple.com/app/id6823471927">App Store (iPhone)</a> · <a href="https://play.google.com/store/apps/details?id=com.pabloespinoza.naipe">Google Play (Android)</a>. ¿Necesitas un código de iPhone para reseñarlo? Escribe a <a href="mailto:pabloespinoza@gmail.com?subject=Naipe%20-%20c%C3%B3digo%20para%20prensa">pabloespinoza@gmail.com</a>.</p>
+    <p class="en"><strong>Out now.</strong> <a href="https://apps.apple.com/app/id6823471927">App Store (iPhone)</a> · <a href="https://play.google.com/store/apps/details?id=com.pabloespinoza.naipe">Google Play (Android)</a>. Need an iPhone code to review it? Write to <a href="mailto:pabloespinoza@gmail.com?subject=Naipe%20-%20press%20code">pabloespinoza@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="dos">
+  <main>
+    <div class="es">
+      <h2>Qué es</h2>
+      <p>Naipe es un rompecabezas de lógica con cartas de póker, sin apuestas, sin fichas y sin azar. La mesa está servida, cada asiento tiene sus cartas y falta una. Tú eliges cuál va en el hueco, y con esa sola decisión defines quién se lleva la mesa.</p>
+      <p>Todo está a la vista desde el primer segundo: no se mezcla nada y no hay cartas boca abajo. Cada nivel tiene exactamente una carta que cumple el objetivo. Las demás son trampas, y cada una es una forma distinta de equivocarse: la que mejora tu mano pero mejora más la de un rival, la que completa tu escalera y otra más alta, la que termina en empate cuando el empate no es victoria.</p>
+      <p>El póker aparece solo como el orden de las manos, igual que el ajedrez usa la forma en que se mueven las piezas. No hay nada que apostar.</p>
+
+      <h2>Lo que lo hace distinto</h2>
+      <ul>
+        <li><strong>951 niveles comprobados.</strong> Un programa verifica que cada uno tiene una sola solución.</li>
+        <li><strong>La dificultad se mide, no se estima.</strong> Cuatro jugadores simulados, del que solo mira su mano al que compara todos los asientos y distingue el empate. Un nivel es tan difícil como el jugador más simple capaz de resolverlo.</li>
+        <li><strong>Fallar enseña.</strong> Si te equivocas, el juego te dice quién ganó con tu carta y con qué mano, sin darte la respuesta. Si aciertas, te explica las cinco candidatas.</li>
+        <li><strong>Las pistas nunca resuelven por ti.</strong> Marcan una trampa o descartan dos candidatas. El último paso siempre es tuyo.</li>
+        <li><strong>Contrarreloj.</strong> Partidas libres y una contrarreloj del día, la misma para todos.</li>
+      </ul>
+    </div>
+    <div class="en">
+      <h2>What it is</h2>
+      <p>Naipe is a logic puzzle with poker cards: no betting, no chips, no luck. The table is set, every seat has its cards, and one card is missing. You choose which one goes in the empty slot, and with that single choice you decide who takes the table.</p>
+      <p>Everything is in plain sight from the first second. Nothing is shuffled and no card is face down. Every level has exactly one card that meets the objective. The others are traps, each a different way of being wrong: the card that improves your hand but improves a rival’s more, the one that completes your straight and a higher one, the one that ends in a tie when a tie is not a win.</p>
+      <p>Poker appears only as the ranking of the hands, the same way chess uses the way the pieces move. There is nothing to bet.</p>
+
+      <h2>What makes it different</h2>
+      <ul>
+        <li><strong>951 verified levels.</strong> A program checks that each one has a single solution.</li>
+        <li><strong>Difficulty is measured, not guessed.</strong> Four simulated players, from one who only looks at their own hand to one who compares every seat and spots ties. A level is as hard as the simplest player able to solve it.</li>
+        <li><strong>Missing teaches you.</strong> Get it wrong and the game tells you who won with your card, and with what hand, without giving away the answer. Get it right and it walks you through all five candidates.</li>
+        <li><strong>Hints never solve it for you.</strong> They mark a trap or rule out two candidates. The last step is always yours.</li>
+        <li><strong>Time attack.</strong> Free runs, and a daily run that is the same for everyone.</li>
+      </ul>
+    </div>
+  </main>
+
+  <aside>
+    <h2 class="es">Ficha</h2>
+    <h2 class="en">Fact sheet</h2>
+    <dl class="ficha">
+      <div><dt><span class="es">Desarrollador</span><span class="en">Developer</span></dt><dd>Pablo Espinoza (Ondasoft)</dd></div>
+      <div><dt><span class="es">Salida</span><span class="en">Release</span></dt><dd><span class="es">9 de noviembre de 2026</span><span class="en">November 9, 2026</span></dd></div>
+      <div><dt><span class="es">Plataformas</span><span class="en">Platforms</span></dt><dd>iPhone, Android</dd></div>
+      <div><dt><span class="es">Género</span><span class="en">Genre</span></dt><dd><span class="es">Rompecabezas de lógica, cartas</span><span class="en">Logic puzzle, cards</span></dd></div>
+      <div><dt><span class="es">Jugadores</span><span class="en">Players</span></dt><dd><span class="es">Un jugador</span><span class="en">Single player</span></dd></div>
+      <div><dt><span class="es">Idiomas</span><span class="en">Languages</span></dt><dd><span class="es">Español e inglés</span><span class="en">English and Spanish</span></dd></div>
+      <div><dt><span class="es">Sin conexión</span><span class="en">Offline</span></dt><dd><span class="es">Sí. En Android, los anuncios y las compras necesitan conexión</span><span class="en">Yes. On Android, ads and purchases need a connection</span></dd></div>
+      <div><dt><span class="es">El nombre</span><span class="en">The name</span></dt><dd><span class="es">«Naipe» es una carta de la baraja, en español</span><span class="en">“Naipe” (NIGH-peh) is Spanish for playing card</span></dd></div>
+    </dl>
+  </aside>
+</div>
+
+<h2 class="es">Precio en cada plataforma</h2>
+<h2 class="en">Price on each platform</h2>
+<table class="es">
+  <thead><tr><th></th><th>iPhone</th><th>Android</th></tr></thead>
+  <tbody>
+    <tr><td>Precio</td><td>2,99 USD, pago único</td><td>Gratis</td></tr>
+    <tr><td>Anuncios</td><td>Ninguno</td><td>Ninguno interrumpe un nivel. Desde el capítulo 2 puede salir alguno entre niveles o al terminar un contrarreloj</td></tr>
+    <tr><td>Compras</td><td>Ninguna</td><td>«Quitar anuncios», 2,99 USD, pago único, y un paquete de comodines opcional</td></tr>
+    <tr><td>En ambas</td><td colspan="2">Los 951 niveles. Sin vidas, sin energía, sin esperas y sin suscripción. Ningún nivel está detrás del dinero.</td></tr>
+  </tbody>
+</table>
+<table class="en">
+  <thead><tr><th></th><th>iPhone</th><th>Android</th></tr></thead>
+  <tbody>
+    <tr><td>Price</td><td>$2.99, one-time</td><td>Free</td></tr>
+    <tr><td>Ads</td><td>None</td><td>None interrupt a level. From chapter 2, some may appear between levels or after a time attack run</td></tr>
+    <tr><td>Purchases</td><td>None</td><td>“Remove ads”, $2.99, one-time, and an optional wildcard pack</td></tr>
+    <tr><td>On both</td><td colspan="2">All 951 levels. No lives, no energy, no waiting, no subscription. No level is behind money.</td></tr>
+  </tbody>
+</table>
+
+<h2 class="es">Vídeo y capturas</h2>
+<h2 class="en">Video and screenshots</h2>
+<div class="medios">
+  <video controls preload="none" playsinline poster="media/video_portada.jpg" width="886" height="1920" aria-label="Naipe gameplay / Vídeo del juego">
+    <source src="media/naipe_video.mp4" type="video/mp4">
+  </video>
+  <div>
+    <div class="capturas es">
+      <a href="media/capturas/es/naipe_es_01.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_01.jpg" width="1206" height="2622" alt="Nivel 1: una candidata sobre la mesa, con dos asientos y cuatro cartas comunitarias."></a>
+      <a href="media/capturas/es/naipe_es_02.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_02.jpg" width="1206" height="2622" alt="Nivel 15: mesa de cuatro asientos con la quinta carta sin elegir."></a>
+      <a href="media/capturas/es/naipe_es_03.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_03.jpg" width="1206" height="2622" alt="Nivel resuelto con tres estrellas."></a>
+      <a href="media/capturas/es/naipe_es_04.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_04.jpg" width="1206" height="2622" alt="La senda de niveles del primer capítulo."></a>
+      <a href="media/capturas/es/naipe_es_05.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_05.jpg" width="1206" height="2622" alt="La tabla con el orden de las manos de póker."></a>
+      <a href="media/capturas/es/naipe_es_06.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_06.jpg" width="1206" height="2622" alt="Una pista marca la trampa entre las candidatas."></a>
+      <a href="media/capturas/es/naipe_es_07.jpg"><img loading="lazy" src="media/capturas/es/naipe_es_07.jpg" width="1206" height="2622" alt="La portada del juego."></a>
+    </div>
+    <div class="capturas en">
+      <a href="media/capturas/en/naipe_en_01.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_01.jpg" width="1206" height="2622" alt="Level 1: a candidate on the table, with two seats and four community cards."></a>
+      <a href="media/capturas/en/naipe_en_02.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_02.jpg" width="1206" height="2622" alt="Level 15: a four-seat table with the fifth card still to choose."></a>
+      <a href="media/capturas/en/naipe_en_03.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_03.jpg" width="1206" height="2622" alt="A level solved with three stars."></a>
+      <a href="media/capturas/en/naipe_en_04.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_04.jpg" width="1206" height="2622" alt="The level path for the first chapter."></a>
+      <a href="media/capturas/en/naipe_en_05.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_05.jpg" width="1206" height="2622" alt="The table showing the ranking of poker hands."></a>
+      <a href="media/capturas/en/naipe_en_06.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_06.jpg" width="1206" height="2622" alt="A hint marks the trap among the candidates."></a>
+      <a href="media/capturas/en/naipe_en_07.jpg"><img loading="lazy" src="media/capturas/en/naipe_en_07.jpg" width="1206" height="2622" alt="The title screen."></a>
+    </div>
+  </div>
+</div>
+
+<h2 class="es">Descargas</h2>
+<h2 class="en">Downloads</h2>
+<p class="es">Puedes usar este material para hablar del juego.</p>
+<p class="en">You are welcome to use this material to cover the game.</p>
+<p>
+  <a class="boton" href="media/naipe-kit-de-prensa.zip"><span class="es">Kit completo (zip)</span><span class="en">Full kit (zip)</span></a>
+  <a class="boton claro" href="media/naipe_icono_1024.png"><span class="es">Icono</span><span class="en">Icon</span></a>
+  <a class="boton claro" href="media/naipe_arte_3840.jpg"><span class="es">Arte</span><span class="en">Key art</span></a>
+  <a class="boton claro" href="media/naipe_video.mp4"><span class="es">Vídeo</span><span class="en">Video</span></a>
+</p>
+
+<h2 class="es">Contacto</h2>
+<h2 class="en">Contact</h2>
+<p class="es">Pablo Espinoza · <a href="mailto:pabloespinoza@gmail.com">pabloespinoza@gmail.com</a><br>Con gusto respondo preguntas y comparto códigos de iPhone para reseñas.</p>
+<p class="en">Pablo Espinoza · <a href="mailto:pabloespinoza@gmail.com">pabloespinoza@gmail.com</a><br>Happy to answer questions and share iPhone review codes.</p>
+
+<footer>
+  <a href="../soporte/"><span class="es">Soporte</span><span class="en">Support</span></a> ·
+  <a href="../"><span class="es">Política de privacidad</span><span class="en">Privacy policy</span></a>
+</footer>
+
+</div>
+</body>
+</html>
