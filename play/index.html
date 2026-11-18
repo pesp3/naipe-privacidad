@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naipe: Card Logic Puzzle</title>
+<meta name="description" content="A logic puzzle with poker cards. You deal the last card. No betting, no luck, one answer.">
+<meta property="og:title" content="Naipe: Card Logic Puzzle">
+<meta property="og:description" content="A logic puzzle with poker cards. You deal the last card. No betting, no luck, one answer.">
+<meta property="og:url" content="https://naipe.ondasoft.net/play/">
+<!--
+  La URL de marketing de la ficha en inglés de App Store Connect (18-nov-2026). A diferencia de
+  /jugar/ (D-126), NO manda sola a la tienda: se abre desde la propia ficha, y rebotar de vuelta a
+  la App Store seria absurdo. Cada frase sale de la descripcion de la ficha
+  (docs/publicacion-app-store.md §3.4), que ya esta contrastada con el codigo en §3.5.
+  6823471927 es el Apple ID de la app. El original vive aqui; pesp3/naipe-privacidad sirve una copia.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #16181a; }
+    a { color: #7fb2e5; }
+  }
+  header { text-align: center; }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin-bottom: 0.25rem; }
+  .lema { font-size: 1.15rem; font-weight: 600; margin-top: 0.25rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.3rem 0; }
+  .tiendas { text-align: center; margin: 2rem 0; }
+  .tiendas a {
+    display: block;
+    margin: 0.75rem auto;
+    max-width: 20rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nota { font-size: 0.9rem; opacity: 0.8; text-align: center; }
+  footer { margin-top: 3rem; font-size: 0.9rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Naipe: Card Logic Puzzle</h1>
+  <p class="lema">You are never dealt a hand. You deal the last card.</p>
+</header>
+
+<p>The table is set, every seat has its cards, and one slot is still empty. Your job is to choose
+which card goes there, and with that single choice, decide how the table ends.</p>
+
+<h2>No luck. One answer.</h2>
+<p>Nothing is shuffled, nothing is rolled, nothing is hidden behind a face-down card. Everything you
+need is on the table from the first second. Every level has exactly one card that meets the
+objective, and the wrong cards are the real puzzle: most candidates are traps.</p>
+
+<h2>What is inside</h2>
+<ul>
+  <li>951 levels, every one verified to have a single solution</li>
+  <li>Tables of 2, 3 or 4 seats, and five objectives</li>
+  <li>Hints that never give you the answer</li>
+  <li>A time attack mode, with a daily run that is the same for everyone</li>
+  <li>A four-colour deck you can turn on, for telling suits apart at a glance</li>
+</ul>
+
+<div class="tiendas">
+  <a href="https://apps.apple.com/app/id6823471927">Download on the App Store (iPhone)</a>
+  <a href="https://play.google.com/store/apps/details?id=com.pabloespinoza.naipe">Get it on Google Play (Android)</a>
+</div>
+<p class="nota">On iPhone you pay once: no ads, no in-app purchases. On Android it is free, with an
+option to remove ads.</p>
+
+<footer>
+  <a href="/soporte/">Support</a> · <a href="/">Privacy policy</a>
+</footer>
+
+</body>
+</html>
